@@ -1,29 +1,33 @@
 package sergiojimenezr.aoc2022.day1;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import sergiojimenezr.utilities.utils.Lector;
 
-public class MainParte1 {
+public class MainParte2 {
 
 	public static void main(String[] args) throws FileNotFoundException {
 
 		List<String> lista = Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day1/input.txt");
 
-		int maximo = 0;
-		int sumatorio = 0;
+		List<Integer> sumatorios = new ArrayList<>();
 
+		int sumatorio = 0;
 		for (String strNum : lista)
 			if (!strNum.equals(""))
 				sumatorio += Integer.parseInt(strNum);
 			else {
-				if (sumatorio > maximo)
-					maximo = sumatorio;
+				sumatorios.add(sumatorio);
 				sumatorio = 0;
 			}
 
-		System.out.println(maximo);
+		Collections.sort(sumatorios);
+
+		System.out.println(sumatorios.get(sumatorios.size() - 1) + sumatorios.get(sumatorios.size() - 2)
+				+ sumatorios.get(sumatorios.size() - 3));
 
 	}
 
