@@ -9,6 +9,7 @@
 
 	<modules>
 		<module>utilities</module>
+		<module>aoc2021</module>
 		<module>aoc2022</module>
 	</modules>
 
