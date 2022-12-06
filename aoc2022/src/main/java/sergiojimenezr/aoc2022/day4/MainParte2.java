@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 import sergiojimenezr.utilities.utils.Lector;
+import sergiojimenezr.utilities.utils.Printer;
 
 public class MainParte2 {
 
@@ -21,7 +22,7 @@ public class MainParte2 {
 			if (par1[0] <= par2[1] && par1[1] >= par2[0])
 				contador++;
 		}
-		System.out.println(contador);
+		Printer.print(contador + "");
 
 	}
 

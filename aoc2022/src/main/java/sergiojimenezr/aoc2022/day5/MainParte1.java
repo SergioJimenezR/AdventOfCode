@@ -7,6 +7,7 @@ import java.util.Deque;
 import java.util.List;
 
 import sergiojimenezr.utilities.utils.Lector;
+import sergiojimenezr.utilities.utils.Printer;
 
 public class MainParte1 {
 
@@ -24,8 +25,10 @@ public class MainParte1 {
 		parse(lineas.subList(0, TAMANO_INICIAL), pilas);
 		ejecutar(lineas.subList(TAMANO_INICIAL + 2, lineas.size()), pilas, true);
 
+		StringBuilder str = new StringBuilder("");
 		for (Deque<Character> pila : pilas)
-			System.out.print(pila.peek());
+			str.append(pila.peek());
+		Printer.print(str.toString());
 	}
 
 	public static void parse(List<String> lineas, List<Deque<Character>> pilas) {
@@ -58,7 +61,5 @@ public class MainParte1 {
 				pilaDestino.push(aux.get(i));
 		}
 	}
-	
-	
 
 }

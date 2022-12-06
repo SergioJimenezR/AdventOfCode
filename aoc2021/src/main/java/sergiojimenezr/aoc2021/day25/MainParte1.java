@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import sergiojimenezr.utilities.utils.Lector;
+import sergiojimenezr.utilities.utils.Printer;
 
 public class MainParte1 {
 
@@ -17,7 +18,7 @@ public class MainParte1 {
 
 		for (int etapa = 1; true; etapa++)
 			if (desplazamientosDrcha(matriz) + desplazamientosAbajo(matriz) == 0) {
-				System.out.println(etapa);
+				Printer.print(etapa + "");
 				break;
 			}
 	}

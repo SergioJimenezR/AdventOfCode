@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import sergiojimenezr.utilities.utils.Lector;
+import sergiojimenezr.utilities.utils.Printer;
 
 public class MainParte2 {
 
@@ -27,7 +28,7 @@ public class MainParte2 {
 			sumatorio += listJugadas.get(strJugada.charAt(0) - 'A').indexOf(miDebidaJugada) * 3;
 			sumatorio += miDebidaJugada - 'X' + 1;
 		}
-		System.out.println(sumatorio);
+		Printer.print(sumatorio + "");
 
 	}
 

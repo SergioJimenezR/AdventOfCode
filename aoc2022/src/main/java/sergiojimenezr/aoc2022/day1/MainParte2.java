@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 import sergiojimenezr.utilities.utils.Lector;
+import sergiojimenezr.utilities.utils.Printer;
 
 public class MainParte2 {
 
@@ -26,8 +27,8 @@ public class MainParte2 {
 
 		Collections.sort(sumatorios);
 
-		System.out.println(sumatorios.get(sumatorios.size() - 1) + sumatorios.get(sumatorios.size() - 2)
-				+ sumatorios.get(sumatorios.size() - 3));
+		Printer.print(sumatorios.get(sumatorios.size() - 1) + sumatorios.get(sumatorios.size() - 2)
+				+ sumatorios.get(sumatorios.size() - 3) + "");
 
 	}
 

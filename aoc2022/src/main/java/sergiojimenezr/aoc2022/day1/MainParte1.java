@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 import sergiojimenezr.utilities.utils.Lector;
+import sergiojimenezr.utilities.utils.Printer;
 
 public class MainParte1 {
 
@@ -23,7 +24,7 @@ public class MainParte1 {
 				sumatorio = 0;
 			}
 
-		System.out.println(maximo);
+		Printer.print(maximo + "");
 
 	}
 

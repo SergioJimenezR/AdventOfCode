@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import sergiojimenezr.utilities.utils.Lector;
+import sergiojimenezr.utilities.utils.Printer;
 
 public class MainParte1 {
 
@@ -24,7 +25,7 @@ public class MainParte1 {
 			sumatorio += planteamiento.indexOf(miEleccion) * 3;
 			sumatorio += miEleccion - 'X' + 1;
 		}
-		System.out.println(sumatorio);
+		Printer.print(sumatorio + "");
 
 	}
 

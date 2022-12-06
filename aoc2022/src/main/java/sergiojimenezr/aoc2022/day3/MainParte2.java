@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 import sergiojimenezr.utilities.utils.Lector;
+import sergiojimenezr.utilities.utils.Printer;
 
 public class MainParte2 {
 
@@ -14,7 +15,7 @@ public class MainParte2 {
 		int sumatorio = 0;
 		for (int i = 0; i < lista.size(); i += 3)
 			sumatorio += MainParte1.prioridadUnicoCaracterComun(lista.get(i), lista.get(i + 1), lista.get(i + 2));
-		System.out.println(sumatorio);
+		Printer.print(sumatorio + "");
 
 	}
 

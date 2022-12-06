@@ -3,6 +3,7 @@ package sergiojimenezr.aoc2022.day3;
 import java.io.FileNotFoundException;
 
 import sergiojimenezr.utilities.utils.Lector;
+import sergiojimenezr.utilities.utils.Printer;
 
 public class MainParte1 {
 
@@ -10,7 +11,7 @@ public class MainParte1 {
 		int sumatorio = 0;
 		for (String s : Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day3/input.txt"))
 			sumatorio += prioridadUnicoCaracterComun(s.substring(0, s.length() / 2), s.substring(s.length() / 2));
-		System.out.println(sumatorio);
+		Printer.print(sumatorio + "");
 	}
 
 	public static int prioridadUnicoCaracterComun(String... cadenas) {
