@@ -17,10 +17,8 @@ public class MainParte1 {
 				matriz[f][c] = lineas.get(f).charAt(c);
 
 		for (int etapa = 1; true; etapa++)
-			if (desplazamientosDrcha(matriz) + desplazamientosAbajo(matriz) == 0) {
-				Printer.print(etapa + "");
-				break;
-			}
+			if (desplazamientosDrcha(matriz) + desplazamientosAbajo(matriz) == 0)
+				Printer.printAndFinish(etapa);
 	}
 
 	private static int desplazamientosDrcha(char[][] matriz) {

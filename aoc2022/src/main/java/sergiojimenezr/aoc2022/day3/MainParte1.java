@@ -11,7 +11,7 @@ public class MainParte1 {
 		int sumatorio = 0;
 		for (String s : Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day3/input.txt"))
 			sumatorio += prioridadUnicoCaracterComun(s.substring(0, s.length() / 2), s.substring(s.length() / 2));
-		Printer.print(sumatorio + "");
+		Printer.printAndFinish(sumatorio);
 	}
 
 	public static int prioridadUnicoCaracterComun(String... cadenas) {

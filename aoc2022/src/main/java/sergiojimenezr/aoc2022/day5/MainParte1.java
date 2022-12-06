@@ -28,7 +28,7 @@ public class MainParte1 {
 		StringBuilder str = new StringBuilder("");
 		for (Deque<Character> pila : pilas)
 			str.append(pila.peek());
-		Printer.print(str.toString());
+		Printer.printAndFinish(str.toString());
 	}
 
 	public static void parse(List<String> lineas, List<Deque<Character>> pilas) {
