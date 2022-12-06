@@ -8,32 +8,22 @@ import sergiojimenezr.utilities.utils.Lector;
 
 public class MainParte1 {
 
-	static String[] historial = null;
-	static List<int[]> cambios = new ArrayList<>();
-
 	public static void main(String[] args) throws FileNotFoundException {
+		List<String> lineas = Lector.leerArchivo("../aoc2021/src/main/java/sergiojimenezr/aoc2021/day25/input.txt");
+		char[][] matriz = new char[lineas.size()][lineas.get(0).length()];
+		for (int f = 0; f < matriz.length; f++)
+			for (int c = 0; c < matriz[0].length; c++)
+				matriz[f][c] = lineas.get(f).charAt(c);
 
-		char[][] matriz = montarMatriz(
-				Lector.leerArchivo("../aoc2021/src/main/java/sergiojimenezr/aoc2021/day25/input.txt"));
-		imprimirMatriz(matriz, 0, 0);
-		prepararHistorial(matriz, 0);
-
-		for (int etapa = 1; true; etapa++) {
-			int movs = desplazamientosDrcha(matriz) + desplazamientosAbajo(matriz);
-
-			imprimirMatriz(matriz, etapa, movs);
-			prepararHistorial(matriz, etapa);
-
-			if (movs == 0)
+		for (int etapa = 1; true; etapa++)
+			if (desplazamientosDrcha(matriz) + desplazamientosAbajo(matriz) == 0) {
+				System.out.println(etapa);
 				break;
-		}
-		for (String s : historial)
-			System.out.println(s);
-
+			}
 	}
 
 	private static int desplazamientosDrcha(char[][] matriz) {
-		cambios.clear();
+		List<int[]> cambios = new ArrayList<>();
 		for (int f = 0; f < matriz.length; f++)
 			for (int c = 0; c < matriz[0].length; c++)
 				if (matriz[f][c] == '>' && matriz[f][(c + 1) % matriz[0].length] == '.')
@@ -46,7 +36,7 @@ public class MainParte1 {
 	}
 
 	private static int desplazamientosAbajo(char[][] matriz) {
-		cambios.clear();
+		List<int[]> cambios = new ArrayList<>();
 		for (int f = 0; f < matriz.length; f++)
 			for (int c = 0; c < matriz[0].length; c++)
 				if (matriz[f][c] == 'v' && matriz[(f + 1) % matriz.length][c] == '.')
@@ -57,40 +47,4 @@ public class MainParte1 {
 		}
 		return cambios.size();
 	}
-
-	private static char[][] montarMatriz(List<String> lineas) {
-		char[][] matriz = new char[lineas.size()][lineas.get(0).length()];
-		historial = new String[matriz.length + 1];
-		for (int f = 0; f < matriz.length; f++) {
-			historial[f] = "";
-			for (int c = 0; c < matriz[0].length; c++)
-				matriz[f][c] = lineas.get(f).charAt(c);
-		}
-		historial[historial.length - 1] = "";
-		return matriz;
-	}
-
-	private static void prepararHistorial(char[][] matriz, int etapa) {
-		historial[0] += etapa + "\t";
-		for (int i = 0; i < matriz[0].length - 1; i++)
-			historial[0] += " ";
-
-		for (int f = 0; f < matriz.length; f++) {
-			for (int c = 0; c < matriz[0].length; c++)
-				historial[f + 1] += matriz[f][c];
-			historial[f + 1] += "\t";
-		}
-	}
-
-	private static void imprimirMatriz(char[][] matriz, int etapa, int movs) {
-		StringBuilder str = new StringBuilder("Etapa: " + etapa + "\n");
-		for (int f = 0; f < matriz.length; f++) {
-			for (int c = 0; c < matriz[0].length; c++)
-				str.append(matriz[f][c]);
-			str.append("\n");
-		}
-		str.append(movs + " movs.\n");
-		System.out.println(str);
-	}
-
 }
