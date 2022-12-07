@@ -31,7 +31,7 @@ public class MainParte1 {
 		Printer.printAndFinish(str.toString());
 	}
 
-	public static void parse(List<String> lineas, List<Deque<Character>> pilas) {
+	public static void parse(Iterable<String> lineas, List<Deque<Character>> pilas) {
 		for (String linea : lineas)
 			for (int p = 0; p < pilas.size(); p++) {
 				char c = linea.charAt(4 * p + 1);
@@ -40,7 +40,7 @@ public class MainParte1 {
 			}
 	}
 
-	public static void ejecutar(List<String> lineas, List<Deque<Character>> pilas, boolean fifo) {
+	public static void ejecutar(Iterable<String> lineas, List<Deque<Character>> pilas, boolean fifo) {
 		for (String linea : lineas) {
 			String[] lineaSplit = linea.split(" ");
 
