@@ -5,13 +5,12 @@ public final class Printer {
 	private Printer() {
 	}
 
-	public static void printAndFinish(String s) {
+	public static void print(String s) {
 		System.out.println(s);
-		System.exit(0);
 	}
 
-	public static void printAndFinish(int i) {
-		printAndFinish(i + "");
+	public static void print(int i) {
+		print(i + "");
 	}
 
 }

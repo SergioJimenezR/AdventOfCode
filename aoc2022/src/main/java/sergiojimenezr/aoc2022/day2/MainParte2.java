@@ -28,7 +28,7 @@ public class MainParte2 {
 			sumatorio += listJugadas.get(strJugada.charAt(0) - 'A').indexOf(miDebidaJugada) * 3;
 			sumatorio += miDebidaJugada - 'X' + 1;
 		}
-		Printer.printAndFinish(sumatorio);
+		Printer.print(sumatorio);
 
 	}
 

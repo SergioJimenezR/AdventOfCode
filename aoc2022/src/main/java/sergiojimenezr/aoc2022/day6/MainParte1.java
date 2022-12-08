@@ -10,7 +10,7 @@ import sergiojimenezr.utilities.utils.Printer;
 public class MainParte1 {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		Printer.printAndFinish(
+		Printer.print(
 				metodo(Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day6/input.txt").get(0), 4));
 	}
 

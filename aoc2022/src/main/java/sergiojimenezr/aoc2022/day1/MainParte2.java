@@ -27,7 +27,7 @@ public class MainParte2 {
 
 		Collections.sort(sumatorios);
 
-		Printer.printAndFinish(sumatorios.get(sumatorios.size() - 1) + sumatorios.get(sumatorios.size() - 2)
+		Printer.print(sumatorios.get(sumatorios.size() - 1) + sumatorios.get(sumatorios.size() - 2)
 				+ sumatorios.get(sumatorios.size() - 3));
 
 	}

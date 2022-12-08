@@ -5,12 +5,13 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class Directorio {
+public class Directorio implements Comparable<Directorio> {
 
 	private Directorio directorioPadre = null;
 	private String nombre;
 	private Map<String, Integer> ficheros = new HashMap<>();
 	private Map<String, Directorio> directorios = new HashMap<>();
+	private int tamanoTotal = 0;
 
 	public Directorio(String nombre) {
 		this.nombre = nombre;
@@ -41,23 +42,29 @@ public class Directorio {
 		directorios.putIfAbsent(d.getNombre(), d);
 	}
 
-	public static int sumaGlobal = 0;
+	public int getTamanoTotal() {
+		return tamanoTotal;
+	}
 
 	public int contarTamano() {
-		int sumatorio = 0;
 
 		Iterator<Entry<String, Integer>> iteratorFicheros = ficheros.entrySet().iterator();
 		while (iteratorFicheros.hasNext())
-			sumatorio += iteratorFicheros.next().getValue();
+			tamanoTotal += iteratorFicheros.next().getValue();
 
 		Iterator<Entry<String, Directorio>> iteratorDirectorios = directorios.entrySet().iterator();
 		while (iteratorDirectorios.hasNext())
-			sumatorio += iteratorDirectorios.next().getValue().contarTamano();
+			tamanoTotal += iteratorDirectorios.next().getValue().contarTamano();
 
-		if (sumatorio <= 100000)
-			sumaGlobal += sumatorio;
+		return tamanoTotal;
+	}
 
-		return sumatorio;
+	@Override
+	public int compareTo(Directorio d2) {
+		if (tamanoTotal < d2.getTamanoTotal()) {
+			return -1;
+		} else
+			return 1;
 	}
 
 }

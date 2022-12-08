@@ -25,7 +25,7 @@ public class MainParte1 {
 			sumatorio += planteamiento.indexOf(miEleccion) * 3;
 			sumatorio += miEleccion - 'X' + 1;
 		}
-		Printer.printAndFinish(sumatorio);
+		Printer.print(sumatorio);
 
 	}
 

@@ -22,7 +22,7 @@ public class MainParte2 {
 			if (par1[0] <= par2[1] && par1[1] >= par2[0])
 				contador++;
 		}
-		Printer.printAndFinish(contador);
+		Printer.print(contador);
 
 	}
 

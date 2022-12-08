@@ -24,7 +24,7 @@ public class MainParte1 {
 				sumatorio = 0;
 			}
 
-		Printer.printAndFinish(maximo);
+		Printer.print(maximo);
 
 	}
 
