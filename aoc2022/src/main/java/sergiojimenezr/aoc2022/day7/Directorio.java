@@ -81,9 +81,9 @@ public class Directorio implements Comparable<Directorio> {
 
 	@Override
 	public int compareTo(Directorio d2) {
-		if (tamanoTotal < d2.getTamanoTotal()) {
+		if (tamanoTotal < d2.getTamanoTotal())
 			return -1;
-		} else
+		else
 			return 1;
 	}
 
