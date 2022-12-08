@@ -20,6 +20,28 @@ public class MainParte1Y2 {
 		Directorio directorioActual = new Directorio("/");
 		listaDirectorios.add(directorioActual);
 
+		reconocimiento(lineas, directorioActual, listaDirectorios);
+		directorioActual.contarTamano();
+
+		Collections.sort(listaDirectorios);
+		int sumParte1 = 0;
+		for (Directorio d : listaDirectorios)
+			if (d.getTamanoTotal() <= 100000)
+				sumParte1 += d.getTamanoTotal();
+			else
+				break; // Eficiencia.
+		Printer.print("Parte 1: " + sumParte1);
+
+		int necessary = directorioActual.getTamanoTotal() - 40000000;
+		for (Directorio d : listaDirectorios)
+			if (d.getTamanoTotal() >= necessary) {
+				Printer.print("Parte 2: " + d.getTamanoTotal());
+				break;
+			}
+	}
+
+	private static void reconocimiento(List<String> lineas, Directorio directorioActual,
+			List<Directorio> listaDirectorios) {
 		for (String comando : lineas)
 			if (comando.startsWith("$ cd")) {
 				String strDirectorio = comando.substring(5);
@@ -39,24 +61,6 @@ public class MainParte1Y2 {
 
 		while (directorioActual.getDirectorioPadre() != null)
 			directorioActual = directorioActual.getDirectorioPadre();
-		directorioActual.contarTamano();
-
-		Collections.sort(listaDirectorios);
-		int sumParte1 = 0;
-		for (Directorio d : listaDirectorios)
-			if (d.getTamanoTotal() <= 100000)
-				sumParte1 += d.getTamanoTotal();
-			else
-				break;
-		Printer.print("Parte 1: " + sumParte1);
-
-		int necessary = directorioActual.getTamanoTotal() - 40000000;
-		for (Directorio d : listaDirectorios)
-			if (d.getTamanoTotal() >= necessary) {
-				Printer.print("Parte 2: " + d.getTamanoTotal());
-				break;
-			}
-
 	}
 
 }

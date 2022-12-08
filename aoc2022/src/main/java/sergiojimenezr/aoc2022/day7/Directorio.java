@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Objects;
 
 public class Directorio implements Comparable<Directorio> {
 
@@ -57,6 +58,25 @@ public class Directorio implements Comparable<Directorio> {
 			tamanoTotal += iteratorDirectorios.next().getValue().contarTamano();
 
 		return tamanoTotal;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(directorioPadre, directorios, ficheros, nombre, tamanoTotal);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Directorio other = (Directorio) obj;
+		return Objects.equals(directorioPadre, other.directorioPadre) && Objects.equals(directorios, other.directorios)
+				&& Objects.equals(ficheros, other.ficheros) && Objects.equals(nombre, other.nombre)
+				&& tamanoTotal == other.tamanoTotal;
 	}
 
 	@Override
