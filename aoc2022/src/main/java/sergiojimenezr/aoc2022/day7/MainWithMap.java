@@ -12,7 +12,7 @@ import sergiojimenezr.utilities.utils.Printer;
 
 public class MainWithMap {
 
-	static final String DIR_INICIAL = "/";
+	static final String DIR_INICIAL = "/a";
 
 	public static void main(String[] args) throws FileNotFoundException {
 		Map<String, Integer> map = reconocimiento(
@@ -44,7 +44,7 @@ public class MainWithMap {
 		for (String comando : lineas)
 			if (comando.startsWith("$ cd")) {
 				String strDirectorio = comando.substring(5);
-				switch (comando.substring(5)) {
+				switch (strDirectorio) {
 				case "/":
 					directorioActual = DIR_INICIAL;
 					break;
