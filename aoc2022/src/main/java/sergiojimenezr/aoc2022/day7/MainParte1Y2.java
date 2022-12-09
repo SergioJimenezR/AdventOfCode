@@ -10,17 +10,10 @@ import sergiojimenezr.utilities.utils.Printer;
 
 public class MainParte1Y2 {
 
-	static boolean modoLs = false;
-
 	public static void main(String[] args) throws FileNotFoundException {
-
-		List<String> lineas = Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day7/input.txt");
-		lineas.remove(0);
 		List<Directorio> listaDirectorios = new ArrayList<>();
-		Directorio directorioActual = new Directorio("/");
-		listaDirectorios.add(directorioActual);
-
-		reconocimiento(lineas, directorioActual, listaDirectorios);
+		Directorio directorioActual = reconocimiento(
+				Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day7/input.txt"), listaDirectorios);
 		directorioActual.contarTamano();
 
 		Collections.sort(listaDirectorios);
@@ -40,12 +33,17 @@ public class MainParte1Y2 {
 			}
 	}
 
-	private static void reconocimiento(List<String> lineas, Directorio directorioActual,
-			List<Directorio> listaDirectorios) {
+	private static Directorio reconocimiento(List<String> lineas, List<Directorio> listaDirectorios) {
+		
+		Directorio directorioActual = new Directorio("/");
+		listaDirectorios.add(directorioActual);
 		for (String comando : lineas)
 			if (comando.startsWith("$ cd")) {
 				String strDirectorio = comando.substring(5);
-				if (strDirectorio.equals(".."))
+				if (strDirectorio.equals("/"))
+					while (directorioActual.getDirectorioPadre() != null)
+						directorioActual = directorioActual.getDirectorioPadre();
+				else if (strDirectorio.equals(".."))
 					directorioActual = directorioActual.getDirectorioPadre();
 				else
 					directorioActual = directorioActual.getDirectoriosInternos().get(strDirectorio);
@@ -61,6 +59,7 @@ public class MainParte1Y2 {
 
 		while (directorioActual.getDirectorioPadre() != null)
 			directorioActual = directorioActual.getDirectorioPadre();
+		return directorioActual;
 	}
 
 }
