@@ -56,10 +56,7 @@ public class MainParte1Y2 {
 				} else
 					directorioActual.addFile(info[1], Integer.parseInt(info[0]));
 			}
-
-		while (directorioActual.getDirectorioPadre() != null)
-			directorioActual = directorioActual.getDirectorioPadre();
-		return directorioActual;
+		return directorioInicial;
 	}
 
 }
