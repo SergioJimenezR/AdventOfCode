@@ -44,12 +44,16 @@ public class MainWithMap {
 		for (String comando : lineas)
 			if (comando.startsWith("$ cd")) {
 				String strDirectorio = comando.substring(5);
-				if (strDirectorio.equals("/"))
+				switch (comando.substring(5)) {
+				case "/":
 					directorioActual = DIR_INICIAL;
-				else if (strDirectorio.equals(".."))
+					break;
+				case "..":
 					directorioActual = directorioActual.substring(0, directorioActual.lastIndexOf('/'));
-				else
+					break;
+				default:
 					directorioActual = new StringBuilder(directorioActual).append("/").append(strDirectorio).toString();
+				}
 				map.putIfAbsent(directorioActual, 0);
 			} else if (!comando.equals("$ ls")) {
 				String[] info = comando.split(" ");
