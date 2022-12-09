@@ -34,15 +34,15 @@ public class MainParte1Y2 {
 	}
 
 	private static Directorio reconocimiento(List<String> lineas, List<Directorio> listaDirectorios) {
-		
-		Directorio directorioActual = new Directorio("/");
-		listaDirectorios.add(directorioActual);
+
+		Directorio directorioInicial = new Directorio("/");
+		listaDirectorios.add(directorioInicial);
+		Directorio directorioActual = directorioInicial;
 		for (String comando : lineas)
 			if (comando.startsWith("$ cd")) {
 				String strDirectorio = comando.substring(5);
 				if (strDirectorio.equals("/"))
-					while (directorioActual.getDirectorioPadre() != null)
-						directorioActual = directorioActual.getDirectorioPadre();
+					directorioActual = directorioInicial;
 				else if (strDirectorio.equals(".."))
 					directorioActual = directorioActual.getDirectorioPadre();
 				else
