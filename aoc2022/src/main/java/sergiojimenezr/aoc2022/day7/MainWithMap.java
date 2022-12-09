@@ -9,38 +9,34 @@ import sergiojimenezr.utilities.utils.Lector;
 
 public class MainWithMap {
 
+	static final String DIR_INICIAL = "/";
+
 	public static void main(String[] args) throws FileNotFoundException {
-		Map<String, Integer> map = new HashMap<>();
 		List<String> lineas = Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day7/input.txt");
+		Map<String, Integer> map = new HashMap<>();
 
 		String directorioActual = "";
-		for (String comando : lineas) {
-			System.out.println(comando);
+		for (String comando : lineas)
 			if (comando.startsWith("$ cd")) {
 				String strDirectorio = comando.substring(5);
-				if (strDirectorio.equals("/")) {
-					directorioActual = "";
-				} else if (strDirectorio.equals("..")) {
+				if (strDirectorio.equals("/"))
+					directorioActual = DIR_INICIAL;
+				else if (strDirectorio.equals(".."))
 					directorioActual = directorioActual.substring(0, directorioActual.lastIndexOf('/'));
-				} else {
+				else
 					directorioActual += "/" + strDirectorio;
-				}
 				map.putIfAbsent(directorioActual, 0);
 			} else if (!comando.equals("$ ls")) {
 				String[] info = comando.split(" ");
-				if (info[0].equals("dir")) {
+				if (info[0].equals("dir"))
 					map.putIfAbsent(directorioActual + "/" + info[1], 0);
-				} else {
-
-					for (String strAux = directorioActual; true; strAux = strAux.substring(0,
-							strAux.lastIndexOf('/'))) {
+				else {
+					for (String strAux = directorioActual; !strAux.equals(DIR_INICIAL); strAux = strAux.substring(0,
+							strAux.lastIndexOf('/')))
 						map.replace(strAux, map.get(strAux) + Integer.parseInt(info[0]));
-						if (strAux.equals(""))
-							break;
-					}
+					map.replace(DIR_INICIAL, map.get(DIR_INICIAL) + Integer.parseInt(info[0]));
 				}
 			}
-		}
 		System.out.println(map);
 
 	}
