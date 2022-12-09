@@ -22,7 +22,7 @@ public class MainParte1 {
 	}
 
 	private static boolean visibleDesdeArriba(int f, int c, int[][] bosque) {
-		for (int i = 0; i < f; i++)
+		for (int i = f - 1; i >= 0; i--)
 			if (bosque[i][c] >= bosque[f][c])
 				return false;
 		return true;
@@ -36,7 +36,7 @@ public class MainParte1 {
 	}
 
 	private static boolean visibleDesdeIzquierda(int f, int c, int[][] bosque) {
-		for (int j = 0; j < c; j++)
+		for (int j = c - 1; j >= 0; j--)
 			if (bosque[f][j] >= bosque[f][c])
 				return false;
 		return true;
