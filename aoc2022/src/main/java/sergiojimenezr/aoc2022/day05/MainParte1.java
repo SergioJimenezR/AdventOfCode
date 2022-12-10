@@ -1,4 +1,4 @@
-package sergiojimenezr.aoc2022.day5;
+package sergiojimenezr.aoc2022.day05;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayDeque;

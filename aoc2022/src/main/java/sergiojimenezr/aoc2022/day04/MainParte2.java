@@ -1,4 +1,4 @@
-package sergiojimenezr.aoc2022.day4;
+package sergiojimenezr.aoc2022.day04;
 
 import java.io.FileNotFoundException;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import sergiojimenezr.utilities.utils.Lector;
 import sergiojimenezr.utilities.utils.Printer;
 
-public class MainParte1 {
+public class MainParte2 {
 
 	public static void main(String[] args) throws FileNotFoundException {
 
@@ -19,7 +19,7 @@ public class MainParte1 {
 			int[] par2 = new int[] { Integer.parseInt(linea.split(",")[1].split("-")[0]),
 					Integer.parseInt(linea.split(",")[1].split("-")[1]) };
 
-			if ((par1[0] <= par2[0] && par2[1] <= par1[1]) || (par2[0] <= par1[0] && par1[1] <= par2[1]))
+			if (par1[0] <= par2[1] && par1[1] >= par2[0])
 				contador++;
 		}
 		Printer.print(contador);

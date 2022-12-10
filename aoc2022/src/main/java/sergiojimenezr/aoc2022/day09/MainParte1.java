@@ -1,4 +1,4 @@
-package sergiojimenezr.aoc2022.day9;
+package sergiojimenezr.aoc2022.day09;
 
 import java.io.FileNotFoundException;
 import java.util.HashSet;

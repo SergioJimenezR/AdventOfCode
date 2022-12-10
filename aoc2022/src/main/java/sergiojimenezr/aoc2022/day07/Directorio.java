@@ -1,4 +1,4 @@
-package sergiojimenezr.aoc2022.day7;
+package sergiojimenezr.aoc2022.day07;
 
 import java.util.HashMap;
 import java.util.Iterator;

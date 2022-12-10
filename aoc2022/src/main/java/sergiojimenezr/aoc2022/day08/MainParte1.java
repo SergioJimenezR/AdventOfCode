@@ -1,4 +1,4 @@
-package sergiojimenezr.aoc2022.day8;
+package sergiojimenezr.aoc2022.day08;
 
 import java.io.FileNotFoundException;
 
