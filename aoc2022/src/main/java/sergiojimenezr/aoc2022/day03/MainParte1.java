@@ -9,7 +9,7 @@ public class MainParte1 {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		int sumatorio = 0;
-		for (String s : Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day3/input.txt"))
+		for (String s : Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day03/input.txt"))
 			sumatorio += prioridadUnicoCaracterComun(s.substring(0, s.length() / 2), s.substring(s.length() / 2));
 		Printer.print(sumatorio);
 	}

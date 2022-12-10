@@ -15,7 +15,7 @@ public class MainParte1 {
 		int[] t = h.clone();
 		Set<String> pasos = new HashSet<>();
 
-		for (String comando : Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day9/input.txt")) {
+		for (String comando : Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day09/input.txt")) {
 			String[] partes = comando.split(" ");
 			char direccion = partes[0].charAt(0);
 			int movs = Integer.parseInt(partes[1]);

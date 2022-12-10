@@ -13,7 +13,7 @@ public class MainParte1Y2 {
 	public static void main(String[] args) throws FileNotFoundException {
 		List<Directorio> listaDirectorios = new ArrayList<>();
 		Directorio directorioActual = reconocimiento(
-				Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day7/input.txt"), listaDirectorios);
+				Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day07/input.txt"), listaDirectorios);
 		directorioActual.contarTamano();
 
 		Collections.sort(listaDirectorios);

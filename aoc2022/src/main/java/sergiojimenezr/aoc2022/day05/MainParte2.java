@@ -20,7 +20,7 @@ public class MainParte2 {
 		for (int i = 0; i < NUM_PILAS; i++)
 			pilas.add(new ArrayDeque<>());
 
-		List<String> lineas = Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day5/input.txt");
+		List<String> lineas = Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day05/input.txt");
 
 		MainParte1.parse(lineas.subList(0, TAMANO_INICIAL), pilas);
 		MainParte1.ejecutar(lineas.subList(TAMANO_INICIAL + 2, lineas.size()), pilas, false);

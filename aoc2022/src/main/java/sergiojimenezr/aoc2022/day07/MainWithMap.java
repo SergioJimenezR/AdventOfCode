@@ -16,7 +16,7 @@ public class MainWithMap {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		Map<String, Integer> map = reconocimiento(
-				Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day7/input.txt"));
+				Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day07/input.txt"));
 
 		List<Integer> tamanos = new ArrayList<>(map.values());
 		Collections.sort(tamanos);

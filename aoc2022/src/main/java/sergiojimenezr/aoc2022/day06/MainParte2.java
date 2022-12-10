@@ -9,7 +9,7 @@ public class MainParte2 {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		Printer.print(MainParte1.metodo(
-				Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day6/input.txt").get(0), 14));
+				Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day06/input.txt").get(0), 14));
 	}
 
 }

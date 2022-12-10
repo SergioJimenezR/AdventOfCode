@@ -12,7 +12,7 @@ public class MainParte1 {
 
 	public static void main(String[] args) throws FileNotFoundException {
 
-		List<String> lista = Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day2/input.txt");
+		List<String> lista = Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day02/input.txt");
 
 		List<String> listJugadas = Arrays.asList("ZXY", "XYZ", "YZX");
 

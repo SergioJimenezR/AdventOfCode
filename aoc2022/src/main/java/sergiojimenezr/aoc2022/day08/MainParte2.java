@@ -10,7 +10,7 @@ public class MainParte2 {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		int[][] bosque = Converter.convertStringMatrixToIntegerMatrix(
-				Lector.leerMatriz("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day8/input.txt", ""));
+				Lector.leerMatriz("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day08/input.txt", ""));
 
 		int puntuacionMaxima = 0;
 		for (int f = 1; f < bosque.length - 1; f++)

@@ -10,7 +10,7 @@ public class MainParte1 {
 
 	public static void main(String[] args) throws FileNotFoundException {
 
-		List<String> lista = Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day4/input.txt");
+		List<String> lista = Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day04/input.txt");
 
 		int contador = 0;
 		for (String linea : lista) {

@@ -10,7 +10,7 @@ public class MainParte1 {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		int[][] bosque = Converter.convertStringMatrixToIntegerMatrix(
-				Lector.leerMatriz("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day8/input.txt", ""));
+				Lector.leerMatriz("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day08/input.txt", ""));
 
 		int contador = 2 * (bosque.length + bosque[0].length) - 4;
 		for (int f = 1; f < bosque.length - 1; f++)
