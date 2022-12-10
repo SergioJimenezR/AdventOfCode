@@ -26,7 +26,7 @@ public class MainParte1 {
 				pasos.add(t[0] + "-" + t[1]);
 			}
 		}
-		Printer.print(pasos.size());
+		Printer.println(pasos.size());
 	}
 
 	public static void moverH(int[] h, char direccion) {

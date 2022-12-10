@@ -23,12 +23,12 @@ public class MainParte1Y2 {
 				sumParte1 += d.getTamanoTotal();
 			else
 				break; // Eficiencia.
-		Printer.print("Parte 1: " + sumParte1);
+		Printer.println("Parte 1: " + sumParte1);
 
 		int necessary = directorioActual.getTamanoTotal() - 40000000;
 		for (Directorio d : listaDirectorios)
 			if (d.getTamanoTotal() >= necessary) {
-				Printer.print("Parte 2: " + d.getTamanoTotal());
+				Printer.println("Parte 2: " + d.getTamanoTotal());
 				break;
 			}
 	}

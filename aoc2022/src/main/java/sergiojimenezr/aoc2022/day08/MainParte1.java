@@ -18,7 +18,7 @@ public class MainParte1 {
 				if (visibleDesdeArriba(f, c, bosque) || visibleDesdeAbajo(f, c, bosque)
 						|| visibleDesdeIzquierda(f, c, bosque) || visibleDesdeDerecha(f, c, bosque))
 					contador++;
-		Printer.print(contador);
+		Printer.println(contador);
 	}
 
 	private static boolean visibleDesdeArriba(int f, int c, int[][] bosque) {

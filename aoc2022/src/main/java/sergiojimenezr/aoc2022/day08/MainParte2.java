@@ -20,7 +20,7 @@ public class MainParte2 {
 				if (puntuacion > puntuacionMaxima)
 					puntuacionMaxima = puntuacion;
 			}
-		Printer.print(puntuacionMaxima);
+		Printer.println(puntuacionMaxima);
 	}
 
 	private static int puntuacionHaciaArriba(int f, int c, int[][] bosque) {

@@ -26,7 +26,7 @@ public class MainParte2 {
 				pasos.add(nudos[8][0] + "-" + nudos[8][1]);
 			}
 		}
-		Printer.print(pasos.size());
+		Printer.println(pasos.size());
 	}
 
 	/*

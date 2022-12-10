@@ -27,12 +27,12 @@ public class MainWithMap {
 				sumaParte1 += t;
 			else
 				break; // Eficiencia.
-		Printer.print("Parte 1: " + sumaParte1);
+		Printer.println("Parte 1: " + sumaParte1);
 
 		int necessary = map.get(DIR_INICIAL) - 40000000;
 		for (int d : tamanos)
 			if (d >= necessary) {
-				Printer.print("Parte 2: " + d);
+				Printer.println("Parte 2: " + d);
 				break;
 			}
 

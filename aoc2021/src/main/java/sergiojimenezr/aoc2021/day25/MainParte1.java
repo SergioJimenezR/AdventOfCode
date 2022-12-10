@@ -18,7 +18,7 @@ public class MainParte1 {
 
 		for (int etapa = 1; true; etapa++)
 			if (desplazamientosDrcha(matriz) + desplazamientosAbajo(matriz) == 0) {
-				Printer.print(etapa);
+				Printer.println(etapa);
 				break;
 			}
 	}
