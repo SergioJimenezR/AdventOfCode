@@ -11,9 +11,8 @@ public class MainParte1 {
 
 	public static void main(String[] args) throws FileNotFoundException {
 
-		int[] h = new int[] { 147, 45 };
-		int[] t = new int[] { 147, 45 };
-		char[][] matriz = new char[205][227];
+		int[] h = new int[2];
+		int[] t = h.clone();
 		Set<String> pasos = new HashSet<>();
 
 		for (String comando : Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day9/input.txt")) {
@@ -22,50 +21,47 @@ public class MainParte1 {
 			int movs = Integer.parseInt(partes[1]);
 
 			for (int mov = 0; mov < movs; mov++) {
-				moverH(direccion, h);
-				if (!estanCerca(h, t)) {
-					moverT(direccion, h, t);
-					pasos.add(t[0] + "-" + t[1]);
-					matriz[t[0]][t[1]] = 'X';
-				}
+				moverH(h, direccion);
+				acercarseConRespectoA(t, h);
+				pasos.add(t[0] + "-" + t[1]);
 			}
 		}
 		Printer.print(pasos.size());
 	}
 
-	private static void moverH(char direccion, int[] h) {
+	public static void moverH(int[] h, char direccion) {
+		/*
+		 * Criterio vigente: [Fila, Columna].
+		 * 
+		 * El programa queda adaptado para que si se desea modificar el criterio, se
+		 * tenga que cambiar solamente aquí.
+		 */
 		switch (direccion) {
-		case 'U':
+		case 'U': // Arriba
 			h[0]--;
 			break;
-		case 'D':
+		case 'D': // Abajo
 			h[0]++;
 			break;
-		case 'L':
+		case 'L': // Izquierda
 			h[1]--;
 			break;
-		default: // R
+		default: // Derecha
 			h[1]++;
 		}
 	}
 
-	private static void moverT(char direccion, int[] h, int[] t) {
-		switch (direccion) {
-		case 'U':
-			t[0] = h[0] + 1;
-			t[1] = h[1];
-			break;
-		case 'D':
-			t[0] = h[0] - 1;
-			t[1] = h[1];
-			break;
-		case 'L':
-			t[0] = h[0];
-			t[1] = h[1] + 1;
-			break;
-		default: // R
-			t[0] = h[0];
-			t[1] = h[1] - 1;
+	public static void acercarseConRespectoA(int[] t, int[] h) {
+		if (!estanCerca(h, t)) {
+			if (h[0] > t[0])
+				t[0]++;
+			else if (h[0] < t[0])
+				t[0]--;
+
+			if (h[1] > t[1])
+				t[1]++;
+			else if (h[1] < t[1])
+				t[1]--;
 		}
 	}
 
