@@ -5,30 +5,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 import sergiojimenezr.utilities.utils.Lector;
+import sergiojimenezr.utilities.utils.Printer;
 
 public class MainParte1 {
 
 	public static void main(String[] args) throws FileNotFoundException {
+		Printer.println(medirSignalStrength(calcularValoresSegunCiclos(
+				Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day10/input.txt"))));
+	}
 
-		List<String> lista = Lector.leerArchivo("../aoc2022/src/main/java/sergiojimenezr/aoc2022/day10/input.txt");
+	public static List<Integer> calcularValoresSegunCiclos(List<String> comandos) {
 		int x = 1;
-		List<Integer> valores = new ArrayList<>();
-
-		for (String linea : lista) {
-			if (linea.equals("noop"))
-				valores.add(x);
+		List<Integer> valoresX = new ArrayList<>();
+		for (String comando : comandos)
+			if (comando.equals("noop"))
+				valoresX.add(x);
 			else {
-				valores.add(x);
-				valores.add(x);
-				x += Integer.parseInt(linea.split(" ")[1]);
+				valoresX.add(x);
+				valoresX.add(x);
+				x += Integer.parseInt(comando.split(" ")[1]);
 			}
-		}
+		return valoresX;
+	}
 
+	private static int medirSignalStrength(List<Integer> valoresX) {
 		int signalStrength = 0;
-		for (int i = 19; i < valores.size(); i += 40)
-			signalStrength += (i + 1) * valores.get(i);
-		System.out.println(signalStrength);
-
+		for (int i = 19; i < valoresX.size(); i += 40)
+			signalStrength += (i + 1) * valoresX.get(i);
+		return signalStrength;
 	}
 
 }
