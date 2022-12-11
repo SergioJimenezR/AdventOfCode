@@ -14,7 +14,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>sergiojimenezr</groupId>
-			<artifactId>utilities</artifactId>
+			<artifactId>aocutilities</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>

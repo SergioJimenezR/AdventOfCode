@@ -8,7 +8,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>utilities</module>
+		<module>aocutilities</module>
 		<module>aoc2021</module>
 		<module>aoc2022</module>
 	</modules>
