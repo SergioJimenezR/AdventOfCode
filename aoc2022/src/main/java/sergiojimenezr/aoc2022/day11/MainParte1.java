@@ -31,20 +31,26 @@ public class MainParte1 {
 				int monkeyDestinationIfFalse = Integer
 						.parseInt(archivo.get(7 * monkey + 5).substring("    If false: throw to monkey ".length()));
 
-				List<String> items = monkeys.get(monkey);
-				for (int i = 0; i < items.size(); i++) {
-					timesAux.set(monkey, timesAux.get(monkey) + 1);
-					int newItem = operate(Integer.parseInt(items.get(i)), operation);
-					int destinationMonkey = testDivisibility(newItem, divisibleBy) ? monkeyDestinationIfTrue
-							: monkeyDestinationIfFalse;
-					monkeys.get(destinationMonkey).add(newItem + "");
-					items.remove(i--);
-				}
+				enviar(monkeys, monkey, timesAux, operation, divisibleBy, monkeyDestinationIfTrue,
+						monkeyDestinationIfFalse);
 			}
 
 		Collections.sort(timesAux);
 		Printer.println(timesAux.get(timesAux.size() - 1) * timesAux.get(timesAux.size() - 2));
 
+	}
+
+	private static void enviar(List<List<String>> monkeys, int monkey, List<Integer> timesAux, String operation,
+			int divisibleBy, int monkeyDestinationIfTrue, int monkeyDestinationIfFalse) {
+		List<String> items = monkeys.get(monkey);
+		for (int i = 0; i < items.size();) {
+			timesAux.set(monkey, timesAux.get(monkey) + 1);
+			int newItem = operate(Integer.parseInt(items.get(i)), operation);
+			int destinationMonkey = testDivisibility(newItem, divisibleBy) ? monkeyDestinationIfTrue
+					: monkeyDestinationIfFalse;
+			monkeys.get(destinationMonkey).add(newItem + "");
+			items.remove(i);
+		}
 	}
 
 	private static boolean testDivisibility(int operate, int divisibleBy) {
