@@ -31,7 +31,7 @@ public class MainParte1 {
 				int monkeyDestinationIfFalse = Integer
 						.parseInt(archivo.get(7 * monkey + 5).substring("    If false: throw to monkey ".length()));
 
-				enviar(monkeys, monkey, timesAux, operation, divisibleBy, monkeyDestinationIfTrue,
+				enviarItems(monkeys, monkey, timesAux, operation, divisibleBy, monkeyDestinationIfTrue,
 						monkeyDestinationIfFalse);
 			}
 
@@ -40,7 +40,7 @@ public class MainParte1 {
 
 	}
 
-	private static void enviar(List<List<String>> monkeys, int monkey, List<Integer> timesAux, String operation,
+	private static void enviarItems(List<List<String>> monkeys, int monkey, List<Integer> timesAux, String operation,
 			int divisibleBy, int monkeyDestinationIfTrue, int monkeyDestinationIfFalse) {
 		List<String> items = monkeys.get(monkey);
 		for (int i = 0; i < items.size();) {
